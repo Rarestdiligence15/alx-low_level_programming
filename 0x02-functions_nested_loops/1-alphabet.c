@@ -1,17 +1,24 @@
 #include "main.h"
 /**
- * main - check the code
+ *_putchar - Writes a character to the standard output
+ *@c: The character to be written
  *
- * Return: Always 0.
+ *Return: On success, returns the character written. On error, returns -1
  */
-int main(void)
+static int _putchar(char c)
+{
+	return write(1, &c, 1);
+}
+
+/**
+ * print_alphabet - Prints the alphabet in lowercase
+ */
+void print_alphabet(void)
 {
 	char v;
 
-	for (v = 97; v <= 122; v++)
-	{
+	for (v = 97; v <= 'z'; v++)
 		_putchar(v);
-	}
+
 	_putchar('\n');
-	return (0);
 }
