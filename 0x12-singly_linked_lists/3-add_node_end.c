@@ -1,11 +1,10 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <stdio.h>
 #include <string.h>
 /**
  * add_node_end - adds a node at the end
  * @head: head of linked list
- * @*str: string to store in list
+ * @str: string to store in list
  *
  * Return: adress
  */
@@ -28,13 +27,12 @@ list_t *add_node_end(list_t **head, const char *str)
 	current_node = *head;
 
 	if (current_node == NULL)
-	{
 		*head = new_node;
-	}
 	else
 	{
 		while (current_node->next != NULL)
-			current_node->next = new_node;
+			current_node = current_node->next;
+		current_node->next = new_node;
 	}
 	return (*head);
 }
